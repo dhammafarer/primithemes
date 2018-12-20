@@ -31,8 +31,8 @@ interface TextProps extends BoxProps {
   fontWeight?: ResponsiveScale;
   textTransform?: ResponsiveString;
   textAlign?: ResponsiveString;
-  lineHeight?: ResponsiveString;
-  letterSpacing?: ResponsiveString;
+  lineHeight?: ResponsiveScale;
+  letterSpacing?: ResponsiveScale;
 }
 
 const Text = styled(
