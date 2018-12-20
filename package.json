@@ -1,0 +1,52 @@
+{
+  "name": "primithemes",
+  "version": "0.0.1",
+  "description": "primitives based on a theme and styled-components",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhammafarer/primithemes.git"
+  },
+  "keywords": [
+    "styled-components",
+    "primitives"
+  ],
+  "author": "Pawel Lisewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhammafarer/primithemes/issues"
+  },
+  "homepage": "https://github.com/dhammafarer/primithemes#readme",
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.3.10",
+    "@types/ramda": "^0.25.44",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/styled-components": "^4.1.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.7.0",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.0"
+  }
+}
