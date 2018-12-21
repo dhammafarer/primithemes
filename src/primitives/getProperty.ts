@@ -1,5 +1,16 @@
 import { Theme } from "../theme/defaultTheme";
-import { propOr, pathOr, compose, map, ifElse, always, isNil } from "ramda";
+import {
+  prop,
+  identity,
+  pathOr,
+  compose,
+  map,
+  ifElse,
+  either,
+  always,
+  isNil,
+  isEmpty,
+} from "ramda";
 
 type Key = string;
 type Value = any;
@@ -11,9 +22,16 @@ type Devices = string[];
 type TemplateFn = (k: Key, val: PropValue, devices: Devices) => string;
 
 const guard = (fn: any) => ifElse(isNil, always(""), fn);
-const guardTheme = (df: Theme, props: Props) => propOr(df, "theme", props);
+
+const guardTheme = (df: Theme, props: Props) => {
+  const res = ifElse(either(isNil, isEmpty), always(df), identity)(
+    prop("theme", props)
+  );
+  console.log("res:", res);
+  return res;
+};
 const guardDevices = (df: Theme, props: Props) =>
-  pathOr(df, ["theme", "devices"], props);
+  pathOr(df.devices, ["theme", "devices"], props);
 
 const applyFn = (fn: any) => ifElse(Array.isArray, map(fn), fn);
 const buildTemplate = (tfn: TemplateFn, key: Key, devices: Devices) => (
