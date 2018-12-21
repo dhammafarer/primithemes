@@ -23,13 +23,9 @@ type TemplateFn = (k: Key, val: PropValue, devices: Devices) => string;
 
 const guard = (fn: any) => ifElse(isNil, always(""), fn);
 
-const guardTheme = (df: Theme, props: Props) => {
-  const res = ifElse(either(isNil, isEmpty), always(df), identity)(
-    prop("theme", props)
-  );
-  console.log("res:", res);
-  return res;
-};
+const guardTheme = (df: Theme, props: Props) =>
+  ifElse(either(isNil, isEmpty), always(df), identity)(prop("theme", props));
+
 const guardDevices = (df: Theme, props: Props) =>
   pathOr(df.devices, ["theme", "devices"], props);
 

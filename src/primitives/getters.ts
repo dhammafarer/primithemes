@@ -90,7 +90,7 @@ export const getTemplateRows = getLiteral(prop("tmpRows"))(
   "grid-template-rows"
 );
 export const getTemplateAreas = getLiteral(prop("tmpAreas"))(
-  "grid-template-rows"
+  "grid-template-areas"
 );
 export const getTemplate = getLiteral(prop("tmp"))("grid-template");
 export const getColGap = getResponsiveSpace(prop("colGap"))("grid-column-gap");
