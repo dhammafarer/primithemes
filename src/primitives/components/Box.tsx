@@ -1,5 +1,6 @@
 import * as React from "react";
-import { styled, css } from "../../theme";
+import styled from "styled-components";
+import { css } from "../../theme";
 import {
   getPadding,
   getMargins,
@@ -57,29 +58,31 @@ interface BoxProps extends SpaceProps {
   width?: ResponsiveScale | ResponsiveString;
 }
 
-const Box = styled(
-  ({
-    p,
-    px,
-    py,
-    pr,
-    pl,
-    pt,
-    pb,
-    m,
-    mx,
-    my,
-    mr,
-    ml,
-    mt,
-    mb,
-    display,
-    bg,
-    width,
-    color,
-    ...rest
-  }) => <div {...rest} />
-)<BoxProps & React.HTMLProps<HTMLDivElement>>`
+type Props = BoxProps & React.Props<HTMLDivElement>;
+
+const FilteredBox: React.SFC<Props> = ({
+  p,
+  px,
+  py,
+  pr,
+  pl,
+  pt,
+  pb,
+  m,
+  mx,
+  my,
+  mr,
+  ml,
+  mt,
+  mb,
+  display,
+  bg,
+  width,
+  color,
+  ...rest
+}) => <div {...rest} />;
+
+const Box = styled(FilteredBox)`
   ${box}
 `;
 

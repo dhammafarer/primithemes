@@ -19,6 +19,12 @@ interface ButtonProps extends BoxProps {
   shadow?: ResponsiveScale;
   radius?: ResponsiveScale;
   b?: ResponsiveScale;
+  bx?: ResponsiveScale;
+  by?: ResponsiveScale;
+  bt?: ResponsiveScale;
+  bb?: ResponsiveScale;
+  br?: ResponsiveScale;
+  bl?: ResponsiveScale;
   borderColor?: ResponsiveString;
   fontFamily?: string;
   fontSize?: ResponsiveScale;
@@ -49,28 +55,48 @@ const button = css<ButtonProps>`
   `}
 `;
 
-const Button = styled(
-  ({
-    shadow,
-    b,
-    bx,
-    by,
-    bt,
-    bb,
-    br,
-    bl,
-    borderColor,
-    radius,
-    fontSize,
-    fontWeight,
-    fontFamily,
-    lineHeight,
-    letterSpacing,
-    textTransform,
-    textAlign,
-    ...rest
-  }) => <Box {...rest} />
-)<ButtonProps & React.HTMLProps<HTMLButtonElement>>`
+type Props = ButtonProps & React.Props<HTMLButtonElement>;
+
+const FilteredButton: React.SFC<Props> = ({
+  p,
+  px,
+  py,
+  pr,
+  pl,
+  pt,
+  pb,
+  m,
+  mx,
+  my,
+  mr,
+  ml,
+  mt,
+  mb,
+  display,
+  bg,
+  width,
+  color,
+  shadow,
+  b,
+  bx,
+  by,
+  bt,
+  bb,
+  br,
+  bl,
+  borderColor,
+  radius,
+  fontSize,
+  fontWeight,
+  fontFamily,
+  lineHeight,
+  letterSpacing,
+  textTransform,
+  textAlign,
+  ...rest
+}) => <button {...rest} />;
+
+const Button = styled(FilteredButton)`
   ${button}
 `;
 

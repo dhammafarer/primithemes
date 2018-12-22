@@ -37,22 +37,24 @@ const card = css<CardProps>`
   `}
 `;
 
-const Card = styled(
-  ({
-    opacity,
-    shadow,
-    b,
-    bx,
-    by,
-    bt,
-    bb,
-    br,
-    bl,
-    borderColor,
-    radius,
-    ...rest
-  }) => <Flex {...rest} />
-)<CardProps & React.HTMLProps<HTMLDivElement>>`
+type Props = CardProps & React.Props<HTMLDivElement>;
+
+const FilteredCard: React.SFC<Props> = ({
+  opacity,
+  shadow,
+  b,
+  bx,
+  by,
+  bt,
+  bb,
+  br,
+  bl,
+  borderColor,
+  radius,
+  ...rest
+}) => <Flex {...rest} />;
+
+const Card = styled(FilteredCard)`
   ${card}
 `;
 
