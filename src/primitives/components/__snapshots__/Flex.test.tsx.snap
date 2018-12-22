@@ -2,6 +2,6 @@
 
 exports[`should render a div 1`] = `
 <div
-  className="sc-bwzfXH cZTpwT sc-bdVaJa jolpEI"
+  className="sc-bwzfXH cZTpwT"
 />
 `;

@@ -1,6 +1,12 @@
 import * as React from "react";
 import { css, styled } from "../../theme";
-import { Box, box, BoxProps, ResponsiveScale, ResponsiveString } from "./Box";
+import {
+  FilteredBox,
+  box,
+  BoxProps,
+  ResponsiveScale,
+  ResponsiveString,
+} from "./Box";
 import {
   getFontSize,
   getFontWeight,
@@ -35,19 +41,25 @@ interface TextProps extends BoxProps {
   letterSpacing?: ResponsiveScale;
 }
 
-const Text = styled(
-  ({
-    fontFamily,
-    fontSize,
-    fontWeight,
-    textTransform,
-    textAlign,
-    lineHeight,
-    letterSpacing,
-    ...rest
-  }) => <Box {...rest} />
-)<TextProps & React.HTMLProps<HTMLDivElement>>`
+type Props = TextProps & React.HTMLProps<HTMLDivElement>;
+
+const FilteredText: React.SFC<Props> = ({
+  fontFamily,
+  fontSize,
+  fontWeight,
+  textTransform,
+  textAlign,
+  lineHeight,
+  letterSpacing,
+  ...rest
+}) => <FilteredBox {...rest} />;
+
+const Text = styled(FilteredText)`
   ${text}
 `;
+
+Text.defaultProps = {
+  is: "p",
+};
 
 export { Text, TextProps };

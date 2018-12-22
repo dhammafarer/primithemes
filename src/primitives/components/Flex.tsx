@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled, css } from "../../theme";
-import { box, Box, BoxProps, ResponsiveString } from "./Box";
+import { box, FilteredBox, BoxProps, ResponsiveString } from "./Box";
 import {
   getFlexDirection,
   getFlexWrap,
@@ -27,12 +27,18 @@ const flex = css<FlexProps>`
   `}
 `;
 
-const Flex = styled(
-  ({ flexDirection, justifyContent, alignItems, flexWrap, ...rest }) => (
-    <Box {...rest} />
-  )
-)<FlexProps & React.HTMLProps<HTMLDivElement>>`
+type Props = FlexProps & React.HTMLProps<HTMLDivElement>;
+
+const FilteredFlex: React.SFC<Props> = ({
+  flexDirection,
+  justifyContent,
+  alignItems,
+  flexWrap,
+  ...rest
+}) => <FilteredBox {...rest} />;
+
+const Flex = styled(FilteredFlex)`
   ${flex}
 `;
 
-export { Flex, flex, FlexProps };
+export { Flex, FilteredFlex, flex, FlexProps };

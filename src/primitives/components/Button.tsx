@@ -1,6 +1,6 @@
 import * as React from "react";
 import { css, styled, Scale } from "../../theme";
-import { Box, box, BoxProps, ResponsiveScale, ResponsiveString } from "./Box";
+import { box, BoxProps, ResponsiveScale, ResponsiveString } from "./Box";
 import {
   getBoxShadow,
   getBorder,
@@ -55,7 +55,7 @@ const button = css<ButtonProps>`
   `}
 `;
 
-type Props = ButtonProps & React.Props<HTMLButtonElement>;
+type Props = ButtonProps & React.HTMLProps<HTMLButtonElement>;
 
 const FilteredButton: React.SFC<Props> = ({
   p,
@@ -100,4 +100,4 @@ const Button = styled(FilteredButton)`
   ${button}
 `;
 
-export { Button, ButtonProps };
+export { Button, Props as ButtonProps };

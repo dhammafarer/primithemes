@@ -1,7 +1,7 @@
 import * as React from "react";
 import { styled, css, Scale } from "../../theme";
 import { ResponsiveScale, ResponsiveString } from "./Box";
-import { Flex, flex, FlexProps } from "./Flex";
+import { Flex, FilteredFlex, flex, FlexProps } from "./Flex";
 import {
   getOpacity,
   getBoxShadow,
@@ -37,7 +37,7 @@ const card = css<CardProps>`
   `}
 `;
 
-type Props = CardProps & React.Props<HTMLDivElement>;
+type Props = CardProps & React.HTMLProps<HTMLDivElement>;
 
 const FilteredCard: React.SFC<Props> = ({
   opacity,
@@ -52,7 +52,7 @@ const FilteredCard: React.SFC<Props> = ({
   borderColor,
   radius,
   ...rest
-}) => <Flex {...rest} />;
+}) => <FilteredFlex {...rest} />;
 
 const Card = styled(FilteredCard)`
   ${card}

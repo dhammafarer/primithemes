@@ -52,15 +52,17 @@ const box = css<BoxProps>`
 `;
 
 interface BoxProps extends SpaceProps {
+  is?: string;
   bg?: ResponsiveString;
   color?: ResponsiveString;
   display?: ResponsiveString;
   width?: ResponsiveScale | ResponsiveString;
 }
 
-type Props = BoxProps & React.Props<HTMLDivElement>;
+type Props = BoxProps & React.HTMLProps<HTMLDivElement>;
 
 const FilteredBox: React.SFC<Props> = ({
+  is,
   p,
   px,
   py,
@@ -80,15 +82,23 @@ const FilteredBox: React.SFC<Props> = ({
   width,
   color,
   ...rest
-}) => <div {...rest} />;
+}) => {
+  const C = is || "div";
+  return <C {...rest} />;
+};
 
 const Box = styled(FilteredBox)`
   ${box}
 `;
 
+Box.defaultProps = {
+  is: "div",
+};
+
 export {
   box,
   Box,
+  FilteredBox,
   BoxProps,
   ResponsiveString,
   ResponsiveScale,
