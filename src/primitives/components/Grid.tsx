@@ -94,7 +94,7 @@ const Grid = styled(
     grid,
     ...rest
   }) => <Box {...rest} />
-)<GridProps & React.HTMLProps<HTMLDivElement>>`
+)<GridProps & React.Props<HTMLDivElement>>`
   ${grid}
 `;
 

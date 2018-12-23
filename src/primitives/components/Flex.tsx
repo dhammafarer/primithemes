@@ -27,7 +27,7 @@ const flex = css<FlexProps>`
   `}
 `;
 
-type Props = FlexProps & React.HTMLProps<HTMLDivElement>;
+type Props = FlexProps & React.Props<HTMLDivElement>;
 
 const FilteredFlex: React.SFC<Props> = ({
   flexDirection,

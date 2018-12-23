@@ -55,7 +55,7 @@ const button = css<ButtonProps>`
   `}
 `;
 
-type Props = ButtonProps & React.HTMLProps<HTMLButtonElement>;
+type Props = ButtonProps & React.Props<HTMLButtonElement>;
 
 const FilteredButton: React.SFC<Props> = ({
   p,

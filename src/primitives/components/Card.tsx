@@ -37,7 +37,7 @@ const card = css<CardProps>`
   `}
 `;
 
-type Props = CardProps & React.HTMLProps<HTMLDivElement>;
+type Props = CardProps & React.Props<HTMLDivElement>;
 
 const FilteredCard: React.SFC<Props> = ({
   opacity,

@@ -12,7 +12,7 @@ import {
 
 type ResponsiveString = string | string[];
 type ResponsiveScale = number | number[];
-type ResponsiveEither = ResponsiveScale | ResponsiveString;
+type ResponsiveEither = string | number | string[] | number[];
 
 interface SpaceProps {
   p?: ResponsiveEither;
@@ -56,10 +56,10 @@ interface BoxProps extends SpaceProps {
   bg?: ResponsiveString;
   color?: ResponsiveString;
   display?: ResponsiveString;
-  width?: ResponsiveScale | ResponsiveString;
+  width?: ResponsiveEither;
 }
 
-type Props = BoxProps & React.HTMLProps<HTMLDivElement>;
+type Props = BoxProps & React.Props<HTMLDivElement>;
 
 const FilteredBox: React.SFC<Props> = ({
   is,
