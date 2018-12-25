@@ -33,7 +33,7 @@ export const getBorder = getDirectionalProperty(fns.border)("border");
 // width
 const handleLength = () => ifElse(gte(1), x => `${x * 100}%`, x => `${x}px`);
 const parseLength = numOrLiteral(handleLength);
-export const getWidth = getResponsive(parseLength)(prop("width"))("width");
+export const getWidth = getResponsive(parseLength)(prop("w"))("width");
 
 // colors
 const fromColor = getResponsive(fns.color);
