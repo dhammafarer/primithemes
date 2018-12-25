@@ -73,6 +73,8 @@ const grid = css<GridProps>`
   `}
 `;
 
+type Props = GridProps & React.HTMLProps<HTMLDivElement>;
+
 const Grid = styled(
   ({
     tmpCols,
@@ -94,7 +96,7 @@ const Grid = styled(
     grid,
     ...rest
   }) => <Box {...rest} />
-)<GridProps & React.Props<HTMLDivElement>>`
+)<Props>`
   ${grid}
 `;
 

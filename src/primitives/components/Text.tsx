@@ -41,7 +41,7 @@ interface TextProps extends BoxProps {
   letterSpacing?: ResponsiveScale;
 }
 
-type Props = TextProps & React.Props<HTMLDivElement>;
+type Props = TextProps & React.HTMLProps<HTMLDivElement>;
 
 const FilteredText: React.SFC<Props> = ({
   fontFamily,

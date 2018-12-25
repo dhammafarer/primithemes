@@ -59,7 +59,7 @@ interface BoxProps extends SpaceProps {
   w?: ResponsiveEither;
 }
 
-type Props = BoxProps & React.Props<HTMLDivElement>;
+type Props = BoxProps & React.HTMLProps<HTMLDivElement>;
 
 const FilteredBox: React.SFC<Props> = ({
   is,
