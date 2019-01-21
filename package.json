@@ -1,6 +1,6 @@
 {
   "name": "primithemes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "primitives based on a theme and styled-components",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
